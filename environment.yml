@@ -1,0 +1,20 @@
+name: udactiy_mlops3
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8.13
+  - scikit-learn
+  - pandas
+  - numpy
+  - pytest
+  - ipython
+  - jupyter
+  - jupyterlab
+  - matplotlib
+  - seaborn
+  - fastapi
+  - uvicorn
+  - pylint
+  - autopep8
+  - joblib
