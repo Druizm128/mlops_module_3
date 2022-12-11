@@ -1,3 +1,6 @@
+# Tests for the API
+
+
 from fastapi.testclient import TestClient
 from main import app
 
@@ -7,7 +10,8 @@ client = TestClient(app)
 def test_get_message():
     r = client.get("/")
     assert r.status_code == 200
-    assert r.json() == {"greeting": "Welcome ... this app will predict your income!"}
+    assert r.json() == {
+        "greeting": "Welcome ... this app will predict your income!"}
 
 
 def test_less_than_or_equal_50k():
@@ -26,7 +30,7 @@ def test_less_than_or_equal_50k():
         "capital-loss": "0",
         "hours-per-week": "40",
         "native-country": "United-States"
-}
+    }
     r = client.post("/predict_income/", json=data)
     assert r.status_code == 200
     print(r.json())
@@ -49,7 +53,7 @@ def test_morethan_50k():
         "capital-loss": 1887,
         "hours-per-week": 40,
         "native-country": "United-States"
-    } 
+    }
     r = client.post("/predict_income/", json=data)
     assert r.status_code == 200
     assert r.json()['income_prediction'] == {"salary": ">50k"}

@@ -1,8 +1,11 @@
+# Library of functions to train the model
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.ensemble import RandomForestClassifier
 
 # Optional: implement hyperparameter tuning.
+
+
 def train_model(X_train, y_train):
     """
     Trains a machine learning model and returns it.
@@ -20,27 +23,28 @@ def train_model(X_train, y_train):
     """
 
     # Train and save a model.
-    rf_model=RandomForestClassifier()
-    distributions={
-        'n_estimators':[50, 100, 120, 150, 200, 250, 300, 400, 500, 800],
-        'max_depth':[5, 8, 10, 12, 15, 20, 25, 30, None],
-        'min_samples_split':[2,5,10,15],
-        'min_samples_leaf':[1,2,5,10]
+    rf_model = RandomForestClassifier()
+    distributions = {
+        'n_estimators': [50, 100, 120, 150, 200, 250, 300, 400, 500, 800],
+        'max_depth': [5, 8, 10, 12, 15, 20, 25, 30, None],
+        'min_samples_split': [2, 5, 10, 15],
+        'min_samples_leaf': [1, 2, 5, 10]
     }
-    grid_search=RandomizedSearchCV(
+    grid_search = RandomizedSearchCV(
         rf_model,
         param_distributions=distributions,
         n_iter=10,
         cv=5
     )
     grid_search.fit(X_train, y_train)
-    model=grid_search.best_estimator_
+    model = grid_search.best_estimator_
     return model
 
 
 def compute_model_metrics(y, preds):
     """
-    Validates the trained machine learning model using precision, recall, and F1.
+    Validates the trained machine learning model using precision, recall, and
+    F1.
 
     Inputs
     ------
