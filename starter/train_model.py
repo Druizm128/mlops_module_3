@@ -15,6 +15,17 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S')
 
+cat_features = [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+]
+
 if __name__ == "__main__":
     logging.getLogger().setLevel(logging.INFO)
     logging.info("---START---")
@@ -24,17 +35,6 @@ if __name__ == "__main__":
     logging.info("Splitting train and test data")
     train, test = train_test_split(data, test_size=0.20)
 
-    cat_features = [
-        "workclass",
-        "education",
-        "marital-status",
-        "occupation",
-        "relationship",
-        "race",
-        "sex",
-        "native-country",
-    ]
-    
     logging.info("Preprocessing training data")
     X_train, y_train, encoder, lb = process_data(
         train, categorical_features=cat_features, label="salary", training=True
