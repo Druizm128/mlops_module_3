@@ -1,0 +1,5 @@
+*.pkl
+*.log
+*.csv
+*.pyc
+*.DS_Store
