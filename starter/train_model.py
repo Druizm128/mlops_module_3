@@ -6,8 +6,8 @@ import json
 import pickle
 from sklearn.model_selection import train_test_split
 import pandas as pd
-from ml.data import process_data
-from ml.model import train_model, compute_model_metrics, inference
+from starter.ml.data import process_data
+from starter.ml.model import train_model, compute_model_metrics, inference
 # Add code to load in the data.
 logging.basicConfig(
     filename='../logs/model_training.log',
