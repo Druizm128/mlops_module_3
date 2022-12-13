@@ -33,7 +33,7 @@ def train_model(X_train, y_train):
     grid_search = RandomizedSearchCV(
         rf_model,
         param_distributions=distributions,
-        n_iter=10,
+        n_iter=50,
         cv=5
     )
     grid_search.fit(X_train, y_train)

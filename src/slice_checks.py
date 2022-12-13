@@ -5,9 +5,9 @@ import os
 
 import pandas as pd
 
-from starter.ml.model import compute_model_metrics, inference
-from starter.ml.data import process_data
-from starter.train_model import cat_features
+from src.ml.model import compute_model_metrics, inference
+from src.ml.data import process_data
+from src.train_model import cat_features
 
 
 def check_slices_performance(data, model_path):

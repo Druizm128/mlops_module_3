@@ -5,11 +5,11 @@ import joblib
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 import pandas as pd
-from starter.ml.model import inference
-from starter.ml.data import process_data
-from starter.train_model import cat_features
+from ml.model import inference
+from ml.data import process_data
+from train_model import cat_features
 
-model_path = "../model"
+model_path = "model"
 
 '''
 Load machine learning artifacts
@@ -19,7 +19,7 @@ model = joblib.load(os.path.join(model_path, "inference_model.pkl"))
 encoder = joblib.load(os.path.join(model_path, "onehot_encoder.pkl"))
 lb = joblib.load(os.path.join(model_path, "label_encoder.pkl"))
 # Loading data
-test = pd.read_csv("../data/test.csv")
+test = pd.read_csv("data/test.csv")
 
 '''
 Define data model and validations
