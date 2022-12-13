@@ -5,9 +5,9 @@ import joblib
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 import pandas as pd
-from ml.model import inference
-from ml.data import process_data
-from train_model import cat_features
+from src.ml.model import inference
+from src.ml.data import process_data
+from src.train_model import cat_features
 
 model_path = "model"
 
