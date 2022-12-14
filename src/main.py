@@ -23,6 +23,9 @@ print(os.path.join(
 print(
     os.listdir()
 )
+print(
+    os.listdir("model")
+)
 # Loading model and encoders:
 model = joblib.load(
     os.path.join(
