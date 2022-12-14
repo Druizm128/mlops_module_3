@@ -29,17 +29,17 @@ print(
 # Loading model and encoders:
 model = joblib.load(
     os.path.join(
-        os.path.dirname('__file__'),
+        #os.path.dirname('__file__'),
         model_path,
         "inference_model.pkl"))
 encoder = joblib.load(
     os.path.join(
-        os.path.dirname('__file__'),
+        #os.path.dirname('__file__'),
         model_path,
         "onehot_encoder.pkl"))
 lb = joblib.load(
     os.path.join(
-        os.path.dirname('__file__'),
+        #os.path.dirname('__file__'),
         model_path,
         "label_encoder.pkl"))
 # Loading data
