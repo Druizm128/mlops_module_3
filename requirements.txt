@@ -9,4 +9,3 @@ gunicorn
 dvc
 dvc-s3
 flake8
-pyproject-flake8

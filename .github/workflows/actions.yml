@@ -34,7 +34,7 @@ jobs:
     - uses: iterative/setup-dvc@v1
     - name: Run flake8
       run: |
-        flake8
+        flake8 --max-line-length 100
     - name: Test with pytest # Final action which runs pytest. If any test fails, then this Action fails.
       run: |
         pytest

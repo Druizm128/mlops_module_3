@@ -2,6 +2,3 @@
 pythonpath = [
   ".", "src",
 ]
-
-[tool.flake8]
-max-line-length = 100
