@@ -21,16 +21,20 @@ jobs:
         python -m pip install --upgrade pip # Upgrade pip to the latest version.
         pip install pytest # Install pytest.
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi # If we have a requirements.txt, then install it.
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1    
     - name: Download artifacts with DVC
-        shell: bash
-        env:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-        run: |
-          dvc remote add -d myremote s3://census-analytics-dante
-          dvc remote modify --local myremote profile myprofile
-          dvc pull
+      shell: bash
+      env:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+      run: |
+        dvc pull
     - uses: actions/checkout@v2
     - uses: iterative/setup-dvc@v1
     - name: Run flake8
