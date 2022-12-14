@@ -37,7 +37,7 @@ jobs:
         flake8 --max-line-length 100
     - name: Test with pytest # Final action which runs pytest. If any test fails, then this Action fails.
       run: |
-        pytest
+        python -m pytest
 
 
         

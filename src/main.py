@@ -9,7 +9,7 @@ from src.ml.model import inference
 from src.ml.data import process_data
 from src.train_model import cat_features
 
-model_path = "../model"
+model_path = "model"
 
 '''
 Load machine learning artifacts
