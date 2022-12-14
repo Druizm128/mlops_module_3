@@ -28,10 +28,9 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
     - name: Download artifacts with DVC
+      uses: iterative/setup-dvc@v1
       run: |
         dvc pull
-    - uses: actions/checkout@v2
-    - uses: iterative/setup-dvc@v1
     - name: Run flake8
       run: |
         flake8 --max-line-length 100
