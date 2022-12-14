@@ -15,9 +15,9 @@ model_path = "model"
 Load machine learning artifacts
 '''
 # Loading model and encoders:
-model = joblib.load(os.path.join(model_path, "inference_model.pkl"))
-encoder = joblib.load(os.path.join(model_path, "onehot_encoder.pkl"))
-lb = joblib.load(os.path.join(model_path, "label_encoder.pkl"))
+model = joblib.load(os.path.join("..", model_path, "inference_model.pkl"))
+encoder = joblib.load(os.path.join("..", model_path, "onehot_encoder.pkl"))
+lb = joblib.load(os.path.join(".." ,model_path, "label_encoder.pkl"))
 # Loading data
 test = pd.read_csv("data/test.csv")
 
