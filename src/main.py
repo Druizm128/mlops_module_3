@@ -21,7 +21,7 @@ print(os.path.join(
     "inference_model.pkl")
 )
 print(
-    os.getcwd()
+    os.listdir()
 )
 # Loading model and encoders:
 model = joblib.load(
