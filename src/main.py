@@ -43,7 +43,7 @@ lb = joblib.load(
         model_path,
         "label_encoder.pkl"))
 # Loading data
-test = pd.read_csv("data/test.csv")
+#test = pd.read_csv("data/test.csv")
 
 '''
 Define data model and validations
