@@ -9,6 +9,14 @@ from src.ml.model import inference
 from src.ml.data import process_data
 from src.train_model import cat_features
 
+'''
+Set up DVC for Heroku
+'''
+if "DYNO" in os.environ and os.path.isdir(".dvc"):
+    os.system("dvc config core.no_scm true")
+    if os.system("dvc pull") != 0:
+        exit("dvc pull failed")
+    os.system("rm -r .dvc .apt/usr/lib/dvc")
 model_path = "model"
 
 '''
