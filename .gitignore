@@ -1,4 +1,4 @@
-*.log
-*.csv
+logs/model_training.log
+logs/slice_output.csv
 *.pyc
 *.DS_Store
