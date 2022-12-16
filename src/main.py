@@ -22,18 +22,6 @@ model_path = "model"
 '''
 Load machine learning artifacts
 '''
-print("THE MAGIC PATH")
-print(os.path.join(
-    os.path.dirname('__file__'),
-    model_path,
-    "inference_model.pkl")
-)
-print(
-    os.listdir()
-)
-print(
-    os.listdir("model")
-)
 # Loading model and encoders:
 model = joblib.load(
     os.path.join(
