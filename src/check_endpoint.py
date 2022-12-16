@@ -1,3 +1,4 @@
+# This script calls the deployed API in Heroku
 from fastapi.testclient import TestClient
 from src.main import app
 
@@ -26,7 +27,9 @@ def request_person_less_than_or_equal_50k():
         "hours-per-week": "40",
         "native-country": "United-States"
     }
-    r = client.post("https://my-ml-app-dante.herokuapp.com/predict_income/", json=data)
+    r = client.post(
+        "https://my-ml-app-dante.herokuapp.com/predict_income/",
+        json=data)
     print(r.json())
 
 
@@ -51,9 +54,7 @@ def request_person_morethan_50k():
     print(r.json())
 
 
-
 if __name__ == '__main__':
     request_get_message()
     request_person_less_than_or_equal_50k()
     request_person_morethan_50k()
-
