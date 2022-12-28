@@ -5,6 +5,12 @@ For additional information see the Model Card paper: https://arxiv.org/pdf/1810.
 ## Model Details
 
 This model is trained to classify persons in two groups. Those that earn more than 50K annually, and those that do not, based on census attribute such as workclass, education, marital-status occupation, relationship, race, sex, native-country, among others.
+
+The model is a Random Forest with:
+- min_samples_leaf=2, 
+- min_samples_split=15,
+- n_estimators=300
+
 ## Intended Use
 
 The model will be used to predict the income of people, that will serve for marketing purposes as an input of another process.

@@ -96,6 +96,7 @@ async def get_income(body: Person):
         pred = {'salary': '<=50k'}
     # Return json with body and prediction
     return {
+        "status_code": 200,
         "body": body,
         "income_prediction": pred
     }
