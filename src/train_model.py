@@ -86,8 +86,8 @@ if __name__ == "__main__":
 
     logging.info("Saving model results dictionary")
     json_object = json.dumps({
-        'precision': precision, 
-        'recall': recall, 
+        'precision': precision,
+        'recall': recall,
         'fbeta': fbeta})
     logging.info(json_object)
     with open("logs/model_results.json", "w") as outfile:
