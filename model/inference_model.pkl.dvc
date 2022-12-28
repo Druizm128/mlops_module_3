@@ -1,0 +1,4 @@
+outs:
+- md5: 0fd72e590665335ea8f62a91eda0ce54
+  size: 43348552
+  path: inference_model.pkl

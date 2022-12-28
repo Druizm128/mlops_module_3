@@ -85,7 +85,11 @@ if __name__ == "__main__":
         pickle.dump(best_model, file)
 
     logging.info("Saving model results dictionary")
-    json_object = json.dumps({'precision': precision, 'recall': recall})
+    json_object = json.dumps({
+        'precision': precision, 
+        'recall': recall, 
+        'fbeta': fbeta})
+    logging.info(json_object)
     with open("logs/model_results.json", "w") as outfile:
         outfile.write(json_object)
 

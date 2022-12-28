@@ -18,7 +18,7 @@ The model was trained with 80% of the data and evaluated with 20%.
 
 * Precision: 79%
 * Recall: 60%
-
+* Fbeta: 68%
 ## Ethical Considerations
 
 * The model reflects 1994 socioeconomic situation and all its gender and racial biases. Also it reflects the social composition of that time in the United States.
